@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Tab</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <style>
+      section {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 100px auto;
+      }
+
+      .tabs {
+        position: relative;
+      }
+
+      .tabs li {
+        display: inline-block;
+      }
+
+      .tabs li .menu a {
+        display: inline-block;
+        width: 50px;
+        background-color: beige;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .tabs .content {
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 100%;
+        background-color: aquamarine;
+        height: calc(300px - 46px);
+      }
+
+      .tabs li .menu.current a {
+        background-color: aquamarine;
+      }
+
+      .tabs li .menu.current ~ .content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <ul class="tabs">
+        <li>
+          <h2 class="menu current"><a href="#content__1">Tab 1</a></h2>
+          <div class="content"><a href="#">Content 1</a></div>
+        </li>
+        <li>
+          <h2 class="menu"><a href="#content__2">Tab 2</a></h2>
+          <div class="content"><a href="#">Content 2</a></div>
+        </li>
+        <li>
+          <h2 class="menu"><a href="#content__3">Tab 3</a></h2>
+          <div class="content"><a href="#">Content 3</a></div>
+        </li>
+      </ul>
+    </section>
+    <script>
+      const menus = document.querySelectorAll(".menu");
+      menus.forEach((menu, idx) => {
+        menu.addEventListener("click", () => openContent(idx));
+      });
+
+      function openContent(idx) {
+        menus.forEach((menu) => menu.classList.remove("current"));
+        menus[idx].classList.add("current");
+      }
+    </script>
+  </body>
+</html>

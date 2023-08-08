@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+:root {
+  --foreground: #333;
+  --background: #fff;
+  --primary: #ffc6ac;
+  --secondary: #fff7dc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+header {
+  height: 100px;
+  background-color: var(--primary);
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.logo img {
+  display: block;
+  height: 100px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu > li {
+  position: relative;
+  font-size: 1.5rem;
+  padding: 10px;
+  flex: 1;
+  width: 150px;
+  text-align: center;
+  background-color: var(--secondary);
+}
+
+.menu > li:hover {
+  background-color: aquamarine;
+}
+
+.menu > li:hover .submenu {
+  visibility: visible;
+  max-height: 200px;
+  transition: max-height 1s;
+}
+
+.submenu {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+  background-color: #fff;
+}
+
+.submenu li {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.submenu li:hover {
+  background-color: var(--secondary);
+}
+
+/* 메인 컨텐츠 */
+main {
+  height: 500px;
+}
+
+/* 슬라이드 */
+.slides {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides li {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.slides li:nth-child(1) {
+  transform: translateX(0%);
+}
+
+.slides li:nth-child(2) {
+  transform: translateX(100%);
+}
+
+.slides li:nth-child(3) {
+  transform: translateX(100%);
+}
+
+.slide a {
+  display: grid;
+  place-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+  color: #fff;
+  height: 100%;
+}
+
+.slide:nth-child(1) a {
+  background-image: url("slide/img1.jpg");
+}
+
+.slide:nth-child(2) a {
+  background-image: url("slide/img2.jpg");
+}
+
+.slide:nth-child(3) a {
+  background-image: url("slide/img3.jpg");
+}
+
+.contents {
+  display: flex;
+  height: 200px;
+}
+
+.content {
+  flex: 1;
+  height: 200px;
+  padding: 10px;
+}
+
+.content:first-child {
+  padding-left: 0;
+}
+
+.content:last-child {
+  padding-right: 0;
+}
+
+.tab {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.tab__title {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: var(--secondary);
+}
+
+.tab .tab__pannel {
+  visibility: hidden;
+  position: absolute;
+  top: 45px;
+  left: 0;
+}
+
+.tab .current .tab__title {
+  background-color: var(--primary);
+}
+
+.tab .current .tab__pannel {
+  visibility: visible;
+}
+
+.notice {
+  width: 100%;
+  background-color: var(--primary);
+}
+
+.notice td {
+  font-size: small;
+  border-bottom: 1px solid black;
+  padding-block: 7px;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 20px;
+  background-image: url("contents/shortcut/direct.jpg");
+}
+
+.shortcut p {
+  color: var(--background);
+  font-weight: bold;
+  font-size: large;
+  text-decoration: underline;
+}
+
+.banner {
+  height: 100%;
+  border-radius: 20px;
+  background-image: url("contents/banner/banner.jpg");
+}
+
+/* 푸터 */
+footer {
+  background-color: var(--secondary);
+  height: 100px;
+}
+
+footer > div {
+  display: flex;
+}
+
+.footer__contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.footer__contents .footer__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.footer__contents .footer__menu li a {
+  display: inline-block;
+}
+
+.footer__contents .footer__menu li::after {
+  content: "";
+  margin-left: 10px;
+  border-left: 1px solid black;
+}
+
+.footer__contents .footer__menu li:last-child::after {
+  display: none;
+}
+
+.footer__contents p {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

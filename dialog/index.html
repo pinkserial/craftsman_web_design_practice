@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <button id="showButton">다이얼로그 켜기</button>
+    <dialog id="dialog">
+      <h2>다이얼로그</h2>
+      <button id="cancelButton">다이얼로그 닫기</button>
+    </dialog>
+    <script>
+      const showButton = document.getElementById("showButton");
+      const cancelButton = document.getElementById("cancelButton");
+      const dialog = document.getElementById("dialog");
+
+      /**
+       * @param event {Event}
+       */
+      dialog.onclick = function (event) {
+        const dimensions = dialog.getBoundingClientRect();
+        console.log(event.clientX);
+        if (
+          event.clientX < dimensions.left ||
+          event.clientX > dimensions.right ||
+          event.clientY < dimensions.top ||
+          event.clientY > dimensions.bottom
+        ) {
+          dialog.close();
+        }
+      };
+
+      showButton.onclick = function (event) {
+        dialog.showModal();
+      };
+
+      cancelButton.onclick = function (event) {
+        dialog.close();
+      };
+    </script>
+  </body>
+</html>

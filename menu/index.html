@@ -29,24 +29,30 @@
       .menu>li {
         background-color: pink;
         position: relative;
-        width: 100px;
+        width: 120px;
         text-align: center;
         padding: 5px;
       }
 
-      .menu>li:hover>.submenu {
-        display: block;
-        height: 200px;
-        border: 1px solid black;
+      .menu>li:hover .submenu {
+        max-height: 500px;
+        transition: max-height 3s ;
       }
 
       .submenu {
-        display: none;
+        display: block;
         position: absolute;
-        height: 0;
+        max-height: 0;
+        overflow: hidden;
         top: 100%;
         left: 0;
-        transition: all 1s ease-out;
+        width: 100%;
+        transition: max-height 0.5s ;
+      }
+
+      .submenu li {
+        border: 1px solid black;
+        
       }
     </style>
   </head>

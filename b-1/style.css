@@ -29,6 +29,12 @@ li {
   list-style: none;
 }
 
+dialog {
+  margin: revert;
+  padding: revert;
+  background-color: var(--secondary);
+}
+
 .inner {
   width: 1200px;
   margin: 0 auto;
@@ -212,6 +218,20 @@ main {
 
 .gallery {
   display: flex;
+  width: 100%;
+  height: 135px;
+  align-items: center;
+  background-color: var(--primary);
+}
+
+.gallery ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.gallery img {
+  display: block;
 }
 
 .shortcut {
@@ -230,6 +250,34 @@ main {
   font-weight: bold;
   font-size: large;
   text-decoration: underline;
+}
+
+dialog div {
+  width: 600px;
+}
+
+dialog h2 {
+  font-style: italic;
+  text-align: center;
+}
+
+dialog p {
+  margin-block: 30px;
+  font-size: large;
+  font-weight: bold;
+  line-height: 2;
+  text-decoration: underline;
+}
+
+dialog button {
+  float: right;
+  padding: 15px;
+  font-size: large;
+  border-radius: 15px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .banner {

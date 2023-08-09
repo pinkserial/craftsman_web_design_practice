@@ -40,3 +40,46 @@ function showSlides() {
 
   setTimeout(showSlides, 3000);
 }
+
+const tab = document.querySelector(".tab");
+const tabList = document.querySelectorAll(".tab > li");
+
+tab.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.tagName !== "H2") return;
+
+  for (const item of tabList) {
+    item.classList.remove("current");
+  }
+
+  const currentListItem = target.parentNode.parentNode;
+
+  currentListItem.classList.add("current");
+});
+
+const dialog = document.querySelector(".shortcut__dialog");
+const shortCutLink = document.querySelector(".shortcut");
+const shortCutCloseBtn = document.querySelector(".shortcut__close");
+
+shortCutLink.onclick = function () {
+  dialog.showModal();
+};
+
+shortCutCloseBtn.onclick = function () {
+  dialog.close();
+};
+
+dialog.onclick = function (event) {
+  const dimensions = dialog.getBoundingClientRect();
+
+  if (
+    event.clientX < dimensions.left ||
+    event.clientX > dimensions.right ||
+    event.clientY > dimensions.bottom ||
+    event.clientY < dimensions.top
+  ) {
+    dialog.close();
+  }
+};
+

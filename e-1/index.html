@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김치 이야기</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a class="logo" href="#">
+        <img src="images/logo.png" alt="김치 이야기 로고 이미지">
+      </a>
+      <nav>
+        <ul class="menu">
+          <li>
+            <a href="#">김치 소개</a>
+            <ul class="submenu">
+              <li><a href="#">초대의 글</a></li>
+              <li><a href="#">김치의 유래</a></li>
+              <li><a href="#">김치 재료</a></li>
+              <li><a href="#">오시는 길</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">김치 퓨전</a>
+            <ul class="submenu">
+              <li><a href="#">지역별 김치</a></li>
+              <li><a href="#">김치 스파게티</a></li>
+              <li><a href="#">김치 볶음밥</a></li>
+              <li><a href="#">김치와 고기</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">체험 프로그램</a>
+            <ul class="submenu">
+              <li><a href="#">김치 담그기</a></li>
+              <li><a href="#">명사와 함께</a></li>
+              <li><a href="#">관람하기</a></li>
+              <li><a href="#">예약하기</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">커뮤니티</a>
+            <ul class="submenu">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">참여게시판</a></li>
+              <li><a href="#">자료실</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="login">
+        <p><a href="#">로그인</a></p>
+        <p><a href="#">회원가입</a></p>
+      </div>
+    </header>
+    <main>
+      <div class="contents">
+        <div class="banner">
+          <a class="banner__container" href="#">
+            <img class="picture" src="images/kimchi.png" alt="김치">
+            <div class="banner__contents">
+              <h2>MBS 아침방송 전격출연!</h2>
+              <p>
+                맛있는 기침이야기 속으로
+                오전 9:00에 MBG에서 방영됩니다
+                커밍순...
+              </p>
+            </div>
+            <img class="arrow" src="images/arrow.png" alt="오른쪽 화살표">
+          </a>
+        </div>
+        <div class="notice">
+          <div class="notice__container">
+            <h2><span>공지사항</span></h2>
+            <table>
+              <tr>
+                <td>
+                  <a id="dialog_link" href="#">새콤한 감칠맛 김치를 원하시나요? 바로!</a>
+                  <dialog id="dialog">
+                    <h2>MBG아침방송 전격출연!</h2>
+                    <img src="images/popup.jpg" alt="팝업 이미지">
+                    <p>MBG아침방송 전격출연!
+                      맛있는 기침이야기 속으로
+                      오전 9:00에 MBG에서 방영됩니다
+                      커밍순...</p>
+                    <button id="cancel" type="button">닫기</button>
+                  </dialog>
+                </td>
+                <td>2023-02-13</td>
+              </tr>
+              <tr>
+                <td><a href="#">김치명인의 김치이야기</a></td>
+                <td>2023-02-13</td>
+              </tr>
+              <tr>
+                <td><a href="#">한국의 음식 문화3 - 지역별로 맛있는</a></td>
+                <td>2023-02-13</td>
+              </tr>
+              <tr>
+                <td><a href="#">맛있는 배추김치 추천! 여기로 꼭 와</a></td>
+                <td>2023-02-13</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="gallery__container">
+            <h2><span>갤러리</span></h2>
+            <ul class="images">
+              <li>
+                <a href="#">
+                  <img src="images/gallery_image_1.jpg" alt="그릇에 담겨진 김치">
+                  <p>한국음식 탐방1</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/gallery_image_2.jpg" alt="손에 김치가 있는 사진">
+                  <p>한국음식 탐방2</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="shortcut">
+          <div class="shortcut__container">
+            <h2><span>바로가기</span></h2>
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="images/building.png" alt="">
+                  <p>회사 소개</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/map.png" alt="">
+                  <p>지도</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/warning.png" alt="">
+                  <p>공지사항</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/telephone-call.png" alt="">
+                  <p>전화문의</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <ul>
+          <li>
+            <a href="#">
+              <div>
+                <h2>김치명인 <strong>경치</strong> 이야기1</h2>
+                <p>김치 명인을 찾아서 전라남도에 왔습니다!</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <h2>김치명인 <strong>경치</strong> 이야기2</h2>
+                <p>김치 명인을 찾아서 강원도에 왔습니다!</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>
+                <h2>김치명인 <strong>경치</strong> 이야기3</h2>
+                <p>김치 명인을 찾아서 부산에 왔습니다 !</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+  </div>
+  <footer>
+    <a class="footer__logo" href="#"><img src="images/logo.png" alt="김치 이야기 로고"></a>
+    <div class="footer__contents">
+      <ul>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">찾아오시는길</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">고객지원</a></li>
+        <li><a href="#">제휴문의</a></li>
+      </ul>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+        at its layout.</p>
+      <p>Copyright 2023. leeminiclass All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

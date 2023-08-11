@@ -30,6 +30,8 @@
     .wrapper {
       width: 600px;
       height: 600px;
+      position: relative;
+      overflow: hidden;
     }
 
     .carousel {
@@ -113,6 +115,72 @@
         visibility: visible;
       }
     }
+
+    /* */
+    .slide {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transition: 1s;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .slide li {
+      height: 100%;
+      width: calc(100% / 3);
+      flex-shrink: 0;
+    }
+
+    .slide li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide li:nth-child(1) a {
+      background-image: url("https://via.placeholder.com/600/92c952");
+    }
+
+    .slide li:nth-child(2) a {
+      background-image: url("https://via.placeholder.com/600/771796");
+    }
+
+    .slide li:nth-child(3) a {
+      background-image: url("https://via.placeholder.com/600/24f355");
+    }
+
+    .pictures {
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      height: 300px;
+      --d: 10s;
+    }
+
+    .pictures li {
+      position: absolute;
+      animation: var(--d) slide linear infinite;
+    }
+
+
+
+    .pictures li:nth-child(2) {
+      animation-delay: calc(-0.33333*var(--d));
+    }
+
+    .pictures li:nth-child(3) {
+      animation-delay: calc(-0.66667*var(--d));
+    }
+
+    @keyframes slide {
+      66.66667% {
+        transform: translate(-200%);
+      }
+      66.67667% {
+        transform: translate(100%);
+      }
+    }
   </style>
 </head>
 
@@ -126,6 +194,45 @@
     </ul>
   </div>
 
+  <hr>
+
+  <div class="wrapper">
+    <ul class="slide">
+      <li><a href="#">TEXT 1</a></li>
+      <li><a href="#">TEXT 2</a></li>
+      <li><a href="#">TEXT 3</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="pictures">
+    <ul>
+      <li><a href="#"><img src="https://via.placeholder.com/300/92c952" alt=""></a></li>
+      <li><a href="#"><img src="https://via.placeholder.com/300/771796" alt=""></a></li>
+      <li><a href="#"><img src="https://via.placeholder.com/300/24f355" alt=""></a></li>
+    </ul>
+  </div>
+
+  <script>
+    const slide = document.querySelector(".slide");
+
+    let slideIndex = 0;
+
+    function slideshow() {
+      console.log(slide.children);
+      const translate = slideIndex * -100;
+      slide.style.left = translate + '%';
+      slideIndex++;
+      if (slideIndex >= slide.children.length) {
+        slideIndex = 0;
+      }
+
+      setTimeout(slideshow, 3000);
+    }
+
+    setTimeout(slideshow, 3000);
+  </script>
 </body>
 
 </html>

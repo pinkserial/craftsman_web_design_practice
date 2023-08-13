@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -19,7 +20,6 @@ main {
 
 header {
   width: 200px;
-  background-color: yellow;
 }
 
 header .logo {
@@ -35,46 +35,59 @@ header nav {
   margin-top: 100px;
 }
 
-header nav>ul {
+header nav > ul {
   width: 150px;
   margin: auto;
   text-align: center;
 }
 
-header nav>ul>li {
+header nav > ul > li {
   background-color: silver;
 }
 
-header nav>ul>li:hover {
+header nav > ul > li:hover {
   background-color: darkcyan;
 }
 
-header nav>ul>li>a {
+header nav > ul > li > a {
   display: inline-block;
   padding: 10px;
   width: 100%;
   border: 1px solid black;
 }
 
-header nav>ul>li>ul {
+header nav > ul > li > ul {
   background-color: cornflowerblue;
   overflow: hidden;
   max-height: 0px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-header nav>ul>li:hover>ul {
+header nav > ul > li:hover > ul {
   transition: 1s;
   max-height: 250px;
 }
 
-header nav>ul>li>ul>li {
+header nav > ul > li > ul > li {
   padding: 10px;
   border: 1px solid black;
 }
 
-header nav>ul>li>ul>li:hover {
+header nav > ul > li > ul > li:hover {
   background-color: chocolate;
+}
+
+header .spotmenu {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+header .spotmenu p:first-child::after {
+  content: "";
+  border: 1px solid black;
+  margin: 3px;
 }
 
 .contents {
@@ -84,25 +97,226 @@ header nav>ul>li>ul>li:hover {
 .contents .slides {
   height: 400px;
   background-color: coral;
+  position: relative;
+  overflow: hidden;
+}
+
+.contents .slides ul {
+  position: absolute;
+  display: flex;
+  width: 300%;
+  height: 100%;
+  white-space: nowrap;
+  word-spacing: 0;
+  transition: left 1s;
+}
+
+.contents .slides ul li {
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+.contents .slides ul li a {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.contents .slides ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contents .slides ul li div {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contents .shortcut {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 3;
+  background-color: blueviolet;
+  padding: 15px;
+  border-radius: 30px;
 }
 
-.contents .banner {
+.contents .shortcut ul li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contents .shortcut ul li:last-child {
+  margin-bottom: 0;
+}
+
+.contents .shortcut ul li a img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.contents .banner a {
   height: 200px;
   background-color: bisque;
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+}
+
+.contents .banner img:first-child {
+  width: 150px;
+  object-fit: cover;
+}
+
+.contents .banner div {
+  flex: 1;
+}
+
+.contents .banner div h2 {
+  margin-bottom: 15px;
+}
+
+.contents .banner img:last-child {
+  width: 50px;
+  height: 50px;
+  align-self: center;
 }
 
 .contents .tab {
   height: 250px;
   background-color: aquamarine;
+  padding: 15px;
+}
+
+.contents .tab ul {
+  display: flex;
+  position: relative;
+}
+
+.contents .tab ul li div {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  background-color: cornsilk;
+}
+
+.contents .tab ul li.active div {
+  visibility: visible;
+}
+
+.contents .tab ul li.active > a h2 {
+  background-color: cornsilk;
+}
+
+.contents .tab ul li > a h2 {
+  display: inline-block;
+  background-color: darkgray;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.contents .tab ul li div {
+  width: 100%;
+  height: 170px;
+}
+
+.contents .tab ul li div table {
+  width: 100%;
+  height: 100%;
+}
+
+.contents .tab ul li div table td {
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.contents .tab ul li div ul {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.contents .tab ul li div img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 footer {
+  display: flex;
   background-color: slategray;
   height: 100px;
+}
+
+footer > a {
+  display: block;
+  width: 200px;
+  height: 100%;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+footer > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer p {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer ul li a img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+dialog {
+  padding: revert;
+  margin: revert;
+  text-align: center;
+}
+
+dialog h2 {
+  margin-bottom: 15px;
+}
+
+dialog p {
+  text-align: start;
+  width: 500px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  word-break: break-all
+}
+
+dialog button {
+  float: right;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 15px;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+
+dialog button:hover {
+  background-color: cadetblue;
 }

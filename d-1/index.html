@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>조이컨트리클럽</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -54,7 +55,7 @@
           </li>
         </ul>
       </nav>
-      <div>
+      <div class="spotmenu">
         <p><a href="">SPOTMENU1</a></p>
         <p><a href="">SPOTMENU2</a></p>
       </div>
@@ -62,87 +63,133 @@
     <div class="contents">
       <div class="slides">
         <ul>
-          <li><a href=""><img src="" alt=""></a></li>
-          <li><a href=""><img src="" alt=""></a></li>
-          <li><a href=""><img src="" alt=""></a></li>
+          <li>
+            <a href="">
+              <img src="images/SLIDE1.png" alt="">
+              <div>
+                <h2>툴팁 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/SLIDE2.png" alt="">
+              <div>
+                <h2>툴팁 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/SLIDE3.png" alt="">
+              <div>
+                <h2>툴팁 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="shortcut">
         <ul>
           <li>
             <a href="">
-              <img src="" alt="">
+              <img src="images/352315_car_directions_icon.png" alt="">
               <p>LINK 1</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="" alt="">
+              <img src="images/9023670_phone_call_fill_icon.png" alt="">
               <p>LINK 2</p>
             </a>
           </li>
           <li>
             <a href="">
-              <img src="" alt="">
+              <img src="images/3643779_clock_hour_ticker_time_times_icon.png" alt="">
               <p>LINK 3</p>
             </a>
           </li>
         </ul>
       </div>
       <div class="banner">
-        <img src="" alt="">
-        <div>
-          <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
-          <p></p>
-        </div>
-        <img src="" alt="">
+        <a href="#">
+          <img src="images/300x200.png" alt="">
+          <div>
+            <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, maiores!</p>
+          </div>
+          <img src="images/211607_right_arrow_icon (1).png" alt="">
+        </a>
       </div>
       <div class="tab">
         <ul>
-          <li>
-            <a href="#">공지사항</a>
-            <table>
-              <tr>
-                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque quisquam officiis.
-                </td>
-                <td>0000.00.00</td>
-              </tr>
-              <tr>
-                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque quisquam officiis.
-                </td>
-                <td>0000.00.00</td>
-              </tr>
-              <tr>
-                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque quisquam officiis.
-                </td>
-                <td>0000.00.00</td>
-              </tr>
-              <tr>
-                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque quisquam officiis.
-                </td>
-                <td>0000.00.00</td>
-              </tr>
-            </table>
+          <li class="active">
+            <a class="tab__btn" href="#">
+              <h2>공지사항</h2>
+            </a>
+            <div>
+              <table>
+                <tr>
+                  <td><a id="dialog_open_link" href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Architecto doloremque
+                      quisquam officiis.</a>
+                  </td>
+                  <td>0000.00.00</td>
+                  <dialog id="dialog">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab exercitationem eveniet recusandae
+                      dolore, odio suscipit?</p>
+                    <button id="dialog_close_btn" type="button">닫기 X</button>
+                  </dialog>
+                </tr>
+                <tr>
+                  <td><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque
+                      quisquam officiis.</a>
+                  </td>
+                  <td>0000.00.00</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque
+                      quisquam officiis.</a>
+                  </td>
+                  <td>0000.00.00</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque
+                      quisquam officiis.</a>
+                  </td>
+                  <td>0000.00.00</td>
+                </tr>
+              </table>
+            </div>
           </li>
           <li>
-            <ul>
-              <li><a href="#"><img src="" alt=""></a></li>
-              <li><a href="#"><img src="" alt=""></a></li>
-              <li><a href="#"><img src="" alt=""></a></li>
-            </ul>
+            <a class="tab__btn" href="#">
+              <h2>갤러리</h2>
+            </a>
+            <div>
+              <ul>
+                <li><a href="#"><img src="images/SLIDE1.png" alt=""></a></li>
+                <li><a href="#"><img src="images/SLIDE2.png" alt=""></a></li>
+                <li><a href="#"><img src="images/SLIDE3.png" alt=""></a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </main>
   <footer>
-    <a href="#"><img src="" alt=""></a>
+    <a href="#"><img src="images/Nike-Logo-1978-present.jpg" alt=""></a>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sed, nostrum, repellendus rerum facilis omnis
       aliquid quibusdam, tempora aperiam commodi ullam. Illum libero sapiente possimus fuga ex ab, unde doloribus.</p>
     <ul>
-      <li><a href="#"><img src="" alt=""></a></li>
-      <li><a href="#"><img src="" alt=""></a></li>
-      <li><a href="#"><img src="" alt=""></a></li>
+      <li><a href="#"><img src="images/294709_circle_twitter_icon.png" alt=""></a></li>
+      <li><a href="#"><img src="images/317752_facebook_social media_social_icon.png" alt=""></a></li>
+      <li><a href="#"><img src="images/3225180_app_logo_media_popular_social_icon.png" alt=""></a></li>
     </ul>
   </footer>
 </body>

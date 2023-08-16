@@ -32,6 +32,7 @@
       height: 600px;
       position: relative;
       overflow: hidden;
+      margin: 0 auto;
     }
 
     .carousel {
@@ -163,8 +164,6 @@
       animation: var(--d) slide linear infinite;
     }
 
-
-
     .pictures li:nth-child(2) {
       animation-delay: calc(-0.33333*var(--d));
     }
@@ -177,9 +176,26 @@
       66.66667% {
         transform: translate(-200%);
       }
+
       66.67667% {
         transform: translate(100%);
       }
+    }
+
+    /* 3 */
+    .carousel-container {
+      width: 100%;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -214,6 +230,28 @@
     </ul>
   </div>
 
+  <hr>
+
+  <div class="wrapper">
+    <div class="carousel-container">
+      <div class="carousel-item">
+        1
+        <img src="https://via.placeholder.com/300/92c952" alt="Image 1">
+      </div>
+      <div class="carousel-item">
+        2
+        <img src="https://via.placeholder.com/300/771796" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+        3
+        <img src="https://via.placeholder.com/300/24f355" alt="Image 3">
+      </div>
+    </div>
+    <!-- <button id="prevBtn" class="carousel-button">&#10094;</button>
+    <button id="nextBtn" class="carousel-button">&#10095;</button> -->
+  </div>
+
+
   <script>
     const slide = document.querySelector(".slide");
 
@@ -232,6 +270,30 @@
     }
 
     setTimeout(slideshow, 3000);
+  </script>
+
+  <script>
+    const carouselContainer = document.querySelector('.carousel-container');
+    let currentIndex = 0;
+    let intervalId;
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carouselContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    function resetInterval() {
+      clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        currentIndex = (currentIndex + 1) % carouselContainer.children.length;
+        updateCarousel();
+      }, 3000); // 3초마다 이미지 전환
+    }
+
+    resetInterval();
+
+
+
   </script>
 </body>
 

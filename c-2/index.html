@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부여 가을연꽃축제</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -54,19 +54,19 @@
       <ul>
         <li>
           <a href="#">
-            <img src="" alt="">
+            <img width="800" height="350" src="images/img1.jpg" alt="">
             <p>부여 가을연꽃축제1</p>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="" alt="">
+            <img width="800" height="350" src="images/img2.jpg" alt="">
             <p>부여 가을연꽃축제2</p>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="" alt="">
+            <img width="800" height="350" src="images/img3.jpg" alt="">
             <p>부여 가을연꽃축제3</p>
           </a>
         </li>
@@ -78,15 +78,8 @@
         <table>
           <tbody>
             <tr>
-              <td><a href="#">부여 가을연꽃축제 공지사항1</a></td>
+              <td><a id="dialog_open_link" href="#">부여 가을연꽃축제 공지사항1</a></td>
               <td>2020.11.23</td>
-              <dialog>
-                <h2>부여 가을연꽃축제 공지사항</h2>
-                <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세.</p>
-                <p>무궁화 삼천리 화려강 대한 사람 대한으로 길이 보전하세.</p>
-                <p>남산 위에 저 소나무, 철갑을 두른 듯 바람서리 불변함은 우리 기상일세.</p>
-                <button>닫기 X</button>
-              </dialog>
             </tr>
             <tr>
               <td><a href="#">부여 가을연꽃축제 공지사항2</a></td>
@@ -106,14 +99,15 @@
       <div class="gallery">
         <h2><a href="#">갤러리</a></h2>
         <ul>
-          <li><a href="#"><img src="" alt=""></a></li>
-          <li><a href="#"><img src="" alt=""></a></li>
-          <li><a href="#"><img src="" alt=""></a></li>
+          <li><a href="#"><img src="images/icon1.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/icon2.jpg" alt=""></a></li>
+          <li><a href="#"><img src="images/icon3.jpg" alt=""></a></li>
         </ul>
       </div>
       <div class="shortcut">
+        <h2><a href="#">바로가기</a></h2>
         <a href="#">
-          <img src="" alt="">
+          <img src="images/direct.jpg" alt="">
           <p>바로가기</p>
         </a>
       </div>
@@ -127,12 +121,12 @@
         </ul>
         <p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
       </div>
-      <div>
+      <div class="etc">
         <div class="sns">
           <ul>
-            <li><a href="#"><img src="" alt=""></a></li>
-            <li><a href="#"><img src="" alt=""></a></li>
-            <li><a href="#"><img src="" alt=""></a></li>
+            <li><a href="#"><img width="55" height="55" src="images/sns1.jpg" alt=""></a></li>
+            <li><a href="#"><img width="55" height="55" src="images/sns2.jpg" alt=""></a></li>
+            <li><a href="#"><img width="55" height="55" src="images/sns3.jpg" alt=""></a></li>
           </ul>
         </div>
         <div class="familysite">
@@ -146,7 +140,13 @@
       </div>
     </footer>
   </main>
-
+  <dialog id="dialog">
+    <h2>부여 가을연꽃축제 공지사항</h2>
+    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세.</p>
+    <p>무궁화 삼천리 화려강 대한 사람 대한으로 길이 보전하세.</p>
+    <p>남산 위에 저 소나무, 철갑을 두른 듯 바람서리 불변함은 우리 기상일세.</p>
+    <button id="dialog_close_btn" type="button">닫기 X</button>
+  </dialog>
 </body>
 
 </html>

@@ -30,33 +30,253 @@ header {
 }
 
 header nav > ul {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
+  text-align: center;
+  width: 150px;
+  margin: 100px auto;
+  background-color: cadetblue;
 }
 
 header nav > ul > li > a {
-  display: inline-block;
+  display: block;
   padding: 10px;
   border: 1px solid black;
 }
 
+header nav > ul > li:hover > a {
+  background-color: burlywood;
+}
+
+header nav > ul > li > ul {
+  max-height: 0;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+
+header nav > ul > li:hover > ul {
+  max-height: 200px;
+  transition: max-height 1s;
+}
+
+header nav > ul > li > ul > li > a {
+  display: block;
+  padding: 10px;
+}
+
+header nav > ul > li > ul > li > a:hover {
+  background-color: azure;
+}
+
 main {
-  background-color: blue;
+  width: 800px;
 }
 
 .slides {
   height: 350px;
+  overflow: hidden;
+}
+
+.slides ul {
+  display: flex;
+  width: 300%;
+  position: relative;
+  top: 0;
+  transition: left 1s;
+}
+
+.slides ul li {
+  position: relative;
+}
+
+.slides ul li a p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contents {
   height: 200px;
   display: flex;
+  gap: 5px;
+}
+
+.contents > div h2 a {
+  display: inline-block;
+  padding: 10px;
+  background-color: chartreuse;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.notice {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.notice table {
+  width: 100%;
+  flex: 1;
+  background-color: chartreuse;
+}
+
+.notice table tbody tr td {
+  border-bottom: 2px solid black;
+  padding: 5px;
+}
+
+.notice table tbody tr td:first-child a {
+  display: block;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery ul {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  background-color: chartreuse;
+}
+
+.shortcut {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shortcut > a {
+  flex: 1;
+  display: block;
+  position: relative;
+}
+
+.shortcut > a img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.shortcut > a p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 footer {
   display: flex;
   height: 100px;
+  background-color: slategray;
+}
+
+footer .copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  color: white;
+}
+
+footer .copyright ul {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+footer .copyright ul li {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid white;
+}
+
+footer .copyright ul li:last-child {
+  padding-right: 0;
+  margin-right: 0;
+  border: none;
+}
+
+footer .copyright p {
+  text-align: center;
+  font-size: large;
+}
+
+footer .etc {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+
+footer .sns ul {
+  display: flex;
+  gap: 5px;
+}
+
+footer .sns ul li a img {
+  border-radius: 50%;
+}
+
+footer .familysite {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+footer .familysite select {
+  padding: 3px;
+}
+
+footer .familysite select option:first-child {
+  display: none;
+}
+
+dialog {
+  padding: revert;
+  margin: revert;
+}
+
+dialog h2 {
+  text-align: center;
+}
+
+dialog p {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: large;
+}
+
+dialog button {
+  margin-top: 20px;
+  float: right;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: bisque;
+}
+
+dialog button:hover {
+  background-color: blanchedalmond;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
 }

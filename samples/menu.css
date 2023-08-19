@@ -41,6 +41,48 @@ main header {
   background-color: chocolate;
 }
 
+main header nav {
+  margin-top: 250px;
+  font-size: larger;
+  color: white;
+}
+
+main header nav a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+main header nav > ul > li {
+  width: 180px;
+  margin: 0 auto;
+  position: relative;
+  background-color: slateblue;
+  outline: 1px solid black;
+}
+
+main header nav > ul > li:hover {
+  background-color: black;
+}
+
+main header nav > ul > li ul {
+  position: absolute;
+  display: flex;
+  width: calc(100vw - 175px);
+  height: 100%;
+  top: 0;
+  left: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+}
+
+main header nav > ul > li ul li:hover {
+  background-color: black;
+}
+
 main .contents {
   width: calc(100% - 200px);
 }

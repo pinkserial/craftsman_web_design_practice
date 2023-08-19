@@ -1,0 +1,66 @@
+.menu {
+  display: flex;
+  gap: 10px;
+  border: 1px solid black;
+}
+
+.menu > li {
+  background-color: pink;
+  position: relative;
+  width: 120px;
+  text-align: center;
+  padding: 5px;
+}
+
+.menu > li:hover .submenu {
+  max-height: 500px;
+  transition: max-height 3s;
+}
+
+.submenu {
+  display: block;
+  position: absolute;
+  max-height: 0;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transition: max-height 0.5s;
+}
+
+.submenu li {
+  border: 1px solid black;
+}
+
+main {
+  display: flex;
+}
+
+main header {
+  width: 200px;
+  background-color: chocolate;
+}
+
+main .contents {
+  width: calc(100% - 200px);
+}
+
+main .contents .slides {
+  height: 400px;
+  background-color: yellow;
+}
+
+main .contents .shortcut {
+  height: 200px;
+  background-color: violet;
+}
+
+main .contents .tab {
+  height: 250px;
+  background-color: cadetblue;
+}
+
+footer {
+  height: 120px;
+  background-color: slategray;
+}

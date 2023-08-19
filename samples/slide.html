@@ -5,24 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    ul,
-    ol,
-    li {
-      list-style: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     body {
       background-color: silver;
     }
@@ -197,10 +181,48 @@
       width: 100%;
       height: auto;
     }
+
+    /* 4 */
+    .carousel_1 {
+      display: flex;
+    }
+
+    .item {
+      display: none;
+    }
+
+    .fading {
+      animation: fading 5s;
+    }
+
+    @keyframes fading {
+      0% {
+        opacity: 0.1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.1;
+      }
+    }
   </style>
+
 </head>
 
 <body>
+
+  <div class="wrapper">
+    <ul class="carousel_1">
+      <li id="first" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/92c952" alt=""></a></li>
+      <li id="second" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/771796" alt=""></a></li>
+      <li id="third" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/24f355" alt=""></a></li>
+    </ul>
+  </div>
+
+  <hr>
 
   <div class="wrapper">
     <ul class="carousel">
@@ -258,7 +280,7 @@
     let slideIndex = 0;
 
     function slideshow() {
-      console.log(slide.children);
+      // console.log(slide.children);
       const translate = slideIndex * -100;
       slide.style.left = translate + '%';
       slideIndex++;
@@ -273,26 +295,47 @@
   </script>
 
   <script>
-    const carouselContainer = document.querySelector('.carousel-container');
+    // const carouselContainer = document.querySelector('.carousel-container');
+    // let currentIndex = 0;
+    // let intervalId;
+
+    // function updateCarousel() {
+    //   const offset = -currentIndex * 100;
+    //   carouselContainer.style.transform = `translateX(${offset}%)`;
+    // }
+
+    // function resetInterval() {
+    //   clearInterval(intervalId);
+    //   intervalId = setInterval(() => {
+    //     currentIndex = (currentIndex + 1) % carouselContainer.children.length;
+    //     updateCarousel();
+    //   }, 3000); // 3초마다 이미지 전환
+    // }
+
+    // resetInterval();
+
+
+
+  </script>
+  <script>
+    const carouselUl = document.querySelector('.carousel_1');
     let currentIndex = 0;
-    let intervalId;
 
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      carouselContainer.style.transform = `translateX(${offset}%)`;
+    showCarousel();
+
+    function showCarousel() {
+      const carouselItems = carouselUl.querySelectorAll('.item');
+
+      for (const item of carouselItems) {
+        item.style.display = '';
+      }
+
+      carouselItems[currentIndex++].style.display = 'block';
+
+      if (currentIndex == 3) currentIndex = 0;
+
+      setTimeout(showCarousel, 5000);
     }
-
-    function resetInterval() {
-      clearInterval(intervalId);
-      intervalId = setInterval(() => {
-        currentIndex = (currentIndex + 1) % carouselContainer.children.length;
-        updateCarousel();
-      }, 3000); // 3초마다 이미지 전환
-    }
-
-    resetInterval();
-
-
 
   </script>
 </body>

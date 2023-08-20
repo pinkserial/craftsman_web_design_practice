@@ -6,219 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="reset.css">
-  <style>
-    body {
-      background-color: silver;
-    }
-
-    .wrapper {
-      width: 600px;
-      height: 600px;
-      position: relative;
-      overflow: hidden;
-      margin: 0 auto;
-    }
-
-    .carousel {
-      position: relative;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .carousel__item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 600px;
-      height: 600px;
-      opacity: 0;
-      will-change: transform, opacity;
-      animation: slideshow 15s linear infinite;
-    }
-
-    .carousel__item:nth-child(1) {
-      animation-delay: -5s;
-    }
-
-    .carousel__item:nth-child(2) {
-      animation-delay: 0s;
-    }
-
-    .carousel__item:nth-child(3) {
-      animation-delay: -10s;
-    }
-
-    .carousel__item a {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel__item:nth-child(1) a {
-      background-image: url("https://via.placeholder.com/600/92c952");
-
-    }
-
-    .carousel__item:nth-child(2) a {
-      background-image: url("https://via.placeholder.com/600/771796");
-
-    }
-
-    .carousel__item:nth-child(3) a {
-      background-image: url("https://via.placeholder.com/600/24f355");
-
-    }
-
-    @keyframes slideshow {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      5%,
-      33.33333% {
-        transform: translateY(100%);
-        opacity: .4;
-        visibility: visible;
-      }
-
-      38.33333%,
-      66.66667% {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      71.66667%,
-      100% {
-        transform: translateY(-100%);
-        opacity: .4;
-        visibility: visible;
-      }
-    }
-
-    /* */
-    .slide {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: 1s;
-      overflow: hidden;
-      position: absolute;
-    }
-
-    .slide li {
-      height: 100%;
-      width: calc(100% / 3);
-      flex-shrink: 0;
-    }
-
-    .slide li a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .slide li:nth-child(1) a {
-      background-image: url("https://via.placeholder.com/600/92c952");
-    }
-
-    .slide li:nth-child(2) a {
-      background-image: url("https://via.placeholder.com/600/771796");
-    }
-
-    .slide li:nth-child(3) a {
-      background-image: url("https://via.placeholder.com/600/24f355");
-    }
-
-    .pictures {
-      position: relative;
-      overflow: hidden;
-      width: 300px;
-      height: 300px;
-      --d: 10s;
-    }
-
-    .pictures li {
-      position: absolute;
-      animation: var(--d) slide linear infinite;
-    }
-
-    .pictures li:nth-child(2) {
-      animation-delay: calc(-0.33333*var(--d));
-    }
-
-    .pictures li:nth-child(3) {
-      animation-delay: calc(-0.66667*var(--d));
-    }
-
-    @keyframes slide {
-      66.66667% {
-        transform: translate(-200%);
-      }
-
-      66.67667% {
-        transform: translate(100%);
-      }
-    }
-
-    /* 3 */
-    .carousel-container {
-      width: 100%;
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-item {
-      flex: 0 0 100%;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: auto;
-    }
-
-    /* 4 */
-    .carousel_1 {
-      display: flex;
-    }
-
-    .item {
-      display: none;
-    }
-
-    .fading {
-      animation: fading 5s;
-    }
-
-    @keyframes fading {
-      0% {
-        opacity: 0.1;
-      }
-
-      50% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0.1;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="slide.css">
 
 </head>
 
 <body>
+  <div class="wrapper">
+    <ul class="slider">
+      <li class="slide-item"><a href="#"><img src="https://via.placeholder.com/600/92c952" alt=""></a></li>
+      <li class="slide-item"><a href="#"><img src="https://via.placeholder.com/600/771796" alt=""></a></li>
+      <li class="slide-item"><a href="#"><img src="https://via.placeholder.com/600/24f355" alt=""></a></li>
+    </ul>
+  </div>
+
+  <hr>
 
   <div class="wrapper">
     <ul class="carousel_1">
-      <li id="first" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/92c952" alt=""></a></li>
-      <li id="second" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/771796" alt=""></a></li>
-      <li id="third" class="item fading"><a href="#"><img src="https://via.placeholder.com/600/24f355" alt=""></a></li>
+      <li id="first" class="item"><a href="#"><img src="https://via.placeholder.com/600/92c952" alt=""></a></li>
+      <li id="second" class="item"><a href="#"><img src="https://via.placeholder.com/600/771796" alt=""></a></li>
+      <li id="third" class="item"><a href="#"><img src="https://via.placeholder.com/600/24f355" alt=""></a></li>
     </ul>
   </div>
 
@@ -295,48 +102,45 @@
   </script>
 
   <script>
-    // const carouselContainer = document.querySelector('.carousel-container');
-    // let currentIndex = 0;
-    // let intervalId;
-
-    // function updateCarousel() {
-    //   const offset = -currentIndex * 100;
-    //   carouselContainer.style.transform = `translateX(${offset}%)`;
-    // }
-
-    // function resetInterval() {
-    //   clearInterval(intervalId);
-    //   intervalId = setInterval(() => {
-    //     currentIndex = (currentIndex + 1) % carouselContainer.children.length;
-    //     updateCarousel();
-    //   }, 3000); // 3초마다 이미지 전환
-    // }
-
-    // resetInterval();
-
-
-
-  </script>
-  <script>
     const carouselUl = document.querySelector('.carousel_1');
     let currentIndex = 0;
 
-    showCarousel();
-
     function showCarousel() {
-      const carouselItems = carouselUl.querySelectorAll('.item');
+      carouselUl.style.transition = '';
+      carouselUl.style.left = '-100%';
 
-      for (const item of carouselItems) {
-        item.style.display = '';
-      }
+      setTimeout(function () {
+        const items = document.querySelectorAll('.item');
+        carouselUl.append(items[0]);
+        carouselUl.style.left = '';
+        carouselUl.style.transition = 'none';
+      }, 1000);
 
-      carouselItems[currentIndex++].style.display = 'block';
-
-      if (currentIndex == 3) currentIndex = 0;
-
-      setTimeout(showCarousel, 5000);
     }
 
+    setInterval(showCarousel, 3000);
+
+    //////////////////////////////////////////////////////////
+    let index = 0;
+
+    function showSlides() {
+      const items = document.querySelectorAll('.slide-item');
+
+      for (const item of items) {
+        item.style.opacity = '';
+        item.style.transition = '';
+      }
+
+      items[index].style.opacity = 1;
+      items[index].style.transition = 'opacity 1s ease-in-out';
+
+      index++;
+      if (index == 3) index = 0;
+
+      setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
   </script>
 </body>
 

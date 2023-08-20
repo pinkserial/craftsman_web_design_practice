@@ -15,14 +15,19 @@ function showSlides() {
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
-document.querySelectorAll("nav>ul>li")?.forEach((menu) => {
-  menu.addEventListener("mouseenter", () => {
-    // const submenu = menu.querySelector(".submenu");
-    $(".submenu").slideDown(30000);
-  });
+const menu = document.querySelector("nav > ul");
+const submenu = document.querySelectorAll(".submenu");
 
-  menu.addEventListener("mouseleave", () => {
-    const submenu = menu.querySelector(".submenu");
-    submenu.classList.remove("show");
+menu.addEventListener("mouseenter", function () {
+  submenu.forEach((sub) => {
+    sub.style.maxHeight = "300px";
+    sub.style.transition = "1.5s";
+  });
+});
+
+menu.addEventListener("mouseleave", function () {
+  submenu.forEach((sub) => {
+    sub.style.maxHeight = "";
+    sub.style.transition = ".5s";
   });
 });
